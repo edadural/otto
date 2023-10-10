@@ -23,8 +23,8 @@ const Header = () => {
                     </a>
                 </div>
                 <div className="flex justify-end">
-                    <a href="/">
-                        <p className="text-lg">deneme3</p>
+                    <a href="/deneme2">
+                        <p className="text-lg">login</p>
                     </a>
                 </div>
             </header>
