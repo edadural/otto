@@ -1,4 +1,4 @@
-import Header from "../components/header/Header";
+import Header from "../widgets/layout/Dashboard-navbar";
 
 const Deneme = () => {
     return (
