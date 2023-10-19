@@ -4,7 +4,6 @@ import {
     Typography,
     Button,
     IconButton,
-    Input,
     Menu,
     MenuHandler,
     MenuList,
@@ -25,7 +24,9 @@ export function DashboardNavbar() {
         appAxios.post('/logout', {})
             .then(response => {
                 console.log(response);
-                navigate(`/`);
+                localStorage.removeItem('token');
+                localStorage.removeItem('name');
+                navigate(`/sign-in`);
             })
             .catch(error => {
                 console.error('Giriş başarısız:', error);
@@ -34,11 +35,8 @@ export function DashboardNavbar() {
 
     return (
         <Navbar>
-            <div className="flex flex-col-reverse justify-end gap-6 md:flex-row md:items-center">
+            <div className="flex flex-col-reverse justify-end gap-6 md:flex-row md:items-center bg-blue-gray-300">
                 <div className="flex items-center">
-                    <div className="mr-auto md:mr-4 md:w-56">
-                        <Input label="Type here" />
-                    </div>
                     <Menu>
                         <MenuHandler>
                             <Button

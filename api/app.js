@@ -5,7 +5,7 @@ const { Pool } = require('pg');
 const jwt = require('jsonwebtoken');
 
 const app = express();
-const port = 3000;
+const port = 8050;
 
 app.use(cors({
     origin: '*',
@@ -31,10 +31,9 @@ const secretKey = 'your-secret-key';
 
 app.use(express.json());
 
-app.post('/api/login', async (req, res) => {
+app.post('/api/login', (req, res) => {
     const { email, password } = req.body;
     console.log(email, password);
-
     pool.query('SELECT * FROM users WHERE mail = $1 and password = $2', [email, password], (error, results) => {
         if (error) {
             console.error('Veri çekme hatası:', error);
@@ -43,7 +42,7 @@ app.post('/api/login', async (req, res) => {
             const user = results.rows[0];
             if (user) {
                 const token = jwt.sign({ userId: user.id, email: user.mail }, secretKey, {
-                    expiresIn: "1h",
+                    expiresIn: '1h',
                 });
                 pool.query(
                     'UPDATE users SET token = $1 WHERE mail = $2',
@@ -69,9 +68,6 @@ app.post('/api/logout', (req, res) => {
     // token veritabanındakiyle uyuşuyorsa ve
     // token jwt'den kontrol edilir halen geçerliyse
     // token null oarak güncellenir.
-
-    // yani şimdi node.js'te jwt ile token doğrulamaya bak. neden 
-    // burada lazım olmucak ama ileride lazım olacak öğrenmiş olursun
     jwt.verify(token, secretKey, (err, decoded) => {
         if (err) {
             console.error('Token doğrulama hatası:', err);
