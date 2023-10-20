@@ -69,6 +69,15 @@ const Sidenav = () => {
                             </ListItem>
                             <ListItem>
                                 <ListItemPrefix>
+                                    <InboxIcon className="h-5 w-5" />
+                                </ListItemPrefix>
+                                Inbox
+                                <ListItemSuffix>
+                                    <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
+                                </ListItemSuffix>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemPrefix>
                                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>
                                 Reporting

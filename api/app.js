@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const jwt = require('jsonwebtoken');
+const { user } = require('pg/lib/defaults');
 
 const app = express();
 const port = 8050;
@@ -59,6 +60,19 @@ app.post('/api/login', (req, res) => {
             }
         }
     });
+});
+
+app.post('/api/register', (req, res) => {
+    const { name, surname, email, password } = req.body;
+    pool.query(
+        'INSERT INTO users(username, usersurname, mail, password) VALUES ($1, $2, $3, $4)', [ name, surname, email, password], (error, results) => {
+            if (error) {
+                console.error('Hata:', error);
+            } else {
+                res.status(200).json({ name: user.username, surname: user.usersurname, email: user.mail, password: user.password });
+            }
+        }
+    );
 });
 
 app.post('/api/logout', (req, res) => {

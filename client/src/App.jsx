@@ -3,6 +3,7 @@ import HomePage from "./layouts/HomePage";
 import Home from "./layouts/Home";
 import NotFound from "./layouts/NotFound";
 import { SignIn } from "./pages/auth/sign-in";
+import SignUp from "./pages/auth/sign-up";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/home" element={<Home/>} />
         {/* <Route exact path="/sign-in" element={<SignIn />} /> lazım olur belki daha sonradan bakarsın */}
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route  path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

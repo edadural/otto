@@ -26,10 +26,10 @@ export function DashboardNavbar() {
                 console.log(response);
                 localStorage.removeItem('token');
                 localStorage.removeItem('name');
-                navigate(`/sign-in`);
+                navigate(`/`);
             })
             .catch(error => {
-                console.error('Giriş başarısız:', error);
+                console.error('Çıkış başarısız:', error);
             });
     }
 
