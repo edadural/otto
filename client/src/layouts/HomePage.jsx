@@ -1,5 +1,5 @@
 
-import { Carousel, Typography, Button, Navbar } from "@material-tailwind/react";
+import { Carousel, Typography, Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const SITEMAP = [
@@ -32,7 +32,7 @@ const BIRIM = [
   },
   {
     title: "DETAIL Çevresel Test Teknolojisi",
-    links: ["DETAIL İLE birden çok çevresel  koşul oluşturabiliyor, test edebiliyor, alınan sonuçlarla firmalar ürünlerinin; verimliliğini, dayanıklılığını, sınır noktalarını ve tepkilerini analiz ederek üretim kararlarını güvenle alıp hareket edebiliyorlar."],
+    links: ["Detail ile birden çok çevresel  koşul oluşturabiliyor, test edebiliyor, alınan sonuçlarla firmalar ürünlerinin; verimliliğini, dayanıklılığını, sınır noktalarını ve tepkilerini analiz ederek üretim kararlarını güvenle alıp hareket edebiliyorlar."],
   },
 ];
 
@@ -43,7 +43,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="flex items-center justify-between text-blue-gray-900 px-36 pt-5 pb-2">
-        <img className="h-9" src="/img/ottonom.png" />
+        <img className="h-9" src="/img/ottonom.png" alt=""/>
         <div className="flex items-center gap-4">
           <Link to="/sign-up">
             <Button
@@ -70,14 +70,14 @@ const HomePage = () => {
           <div className="relative h-full w-full">
             <img
               src="/img/otto.png"
-              alt="image 1"
+              alt=""
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
               <div className="w-3/4 text-center md:w-2/4">
                 <Typography
                   variant="h1"
-                  className="mb-4 text-3xl text-orange-800"
+                  className="mb-4 text-3xl text-deep-orange-800"
                 >
                   Ottonom, Dinamik Mühendislik ile Fikirleri Gerçeğe Dönüştürür
                 </Typography>
@@ -93,7 +93,7 @@ const HomePage = () => {
           <div className="relative h-full w-full">
             <img
               src="/img/otto.png"
-              alt="image 1"
+              alt=""
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
@@ -101,7 +101,7 @@ const HomePage = () => {
                 <Typography
                   variant="h1"
                   color="white"
-                  className="mb-4 text-3xl text-orange-800"
+                  className="mb-4 text-3xl text-deep-orange-800"
                 >
                   Ottonom Mühendislik Servisleri
                 </Typography>
@@ -110,7 +110,7 @@ const HomePage = () => {
                   className="text-lg opacity-80"
                 >
                   Ottonom mühendislik hizmet ve çözüm sağlayıcısı olarak; dinamik mühendislik modeli ile yeni nesil yüksek teknolojili ürün ve çözümler sunar. Ottonom’un sunduğu mühendislik hizmetleri
-                
+
                   <p className="font-bold">Özel Makine Tasarımı, Kısmi veya Komple Makine İmalatı, Elektrik Planı Tasarımı, PLC Programlama, Devreye Alma, GUI Tasarım, Problem Çözme Hizmetleri, Proje Yönetimi, Kalite Kontrol Hizmetleri</p>
                 </Typography>
               </div>
@@ -119,7 +119,7 @@ const HomePage = () => {
           <div className="relative h-full w-full">
             <img
               src="/img/otto.png"
-              alt="image 1"
+              alt=""
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
@@ -127,7 +127,7 @@ const HomePage = () => {
                 <Typography
                   variant="h1"
                   color="white"
-                  className="mb-4 text-3xl text-orange-800"
+                  className="mb-4 text-3xl text-deep-orange-800"
                 >
                   Fayda Odaklı Mühendislik
                 </Typography>
@@ -136,7 +136,7 @@ const HomePage = () => {
                   className="text-lg opacity-80"
                 >
                   Müşterilerimizin inovatif çözümlerle rekabet güçlerini arttırmak için sunduğumuz
-                  tüm mühendislik çözümlerin arkasında 5 temel faydaya odaklanıyoruz. 
+                  tüm mühendislik çözümlerin arkasında 5 temel faydaya odaklanıyoruz.
                   <p className="font-bold">Risklerin En Aza İndirilmesi, Zaman Tasarrufu, Verimliliğin Optimize Edilmesi, Maliyet Tasarrufu, İş Güvenliğinin Maksimize Edilmesi</p>
                 </Typography>
               </div>
@@ -144,10 +144,10 @@ const HomePage = () => {
           </div>
         </Carousel>
       </div>
-      <div className="p-5 mx-24">
+      <div className="p-6 mx-24">
         <div className="flex justify-center">
           <Typography
-            className="font-bold text-4xl text-gray-700"
+            className="font-bold text-4xl text-gray-700 pb-3"
           >
             İŞ BİRİMLERİMİZ
           </Typography>
@@ -163,12 +163,7 @@ const HomePage = () => {
               <ul className="space-y-1">
                 {links.map((link, key) => (
                   <Typography key={key} as="li" color="blue-gray" className="font-normal">
-                    <a
-                      href=""
-                      className="inline-block py-1 pr-2 transition-transform text-base"
-                    >
-                      {link}
-                    </a>
+                    {link}
                   </Typography>
                 ))}
               </ul>
@@ -189,12 +184,7 @@ const HomePage = () => {
                 <ul className="space-y-1">
                   {links.map((link, key) => (
                     <Typography key={key} as="li" className="font-normal">
-                      <a
-                        href=""
-                        className="inline-block py-1 pr-2 transition-transform text-sm"
-                      >
                         {link}
-                      </a>
                     </Typography>
                   ))}
                 </ul>
